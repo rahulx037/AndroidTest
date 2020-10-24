@@ -3,6 +3,7 @@ package dragor.international.di
 import dragor.international.api.ApiConstants
 import dragor.international.repository.Repository
 import com.google.gson.GsonBuilder
+import dragor.international.api.ApiConstants.Companion.TIMEOUT_IN_SEC
 import dragor.international.api.network.ApiService
 import dragor.international.ui.test.ExampleViewModel
 import dragor.international.api.network.LiveDataCallAdapterFactory
@@ -29,8 +30,8 @@ val retrofitModule = module {
         val interceptor = HttpLoggingInterceptor()
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
         val okHttpClient = OkHttpClient.Builder()
-        okHttpClient.connectTimeout(15, TimeUnit.SECONDS)
-        okHttpClient.readTimeout(15, TimeUnit.SECONDS)
+        okHttpClient.connectTimeout(TIMEOUT_IN_SEC, TimeUnit.SECONDS)
+        okHttpClient.readTimeout(TIMEOUT_IN_SEC, TimeUnit.SECONDS)
         okHttpClient.addInterceptor(interceptor)
         return okHttpClient.build()
     }

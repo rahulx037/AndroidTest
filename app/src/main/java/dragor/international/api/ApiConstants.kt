@@ -7,6 +7,6 @@ package dragor.international.api;
 class  ApiConstants {
     companion object {
         val ENDPOINT : String ="https://5e99a9b1bc561b0016af3540.mockapi.io/jet2/api/v1/"
-        val TIMEOUT_IN_SEC: Int  = 15
+        val TIMEOUT_IN_SEC: Long  = 15
     }
 }
