@@ -5,7 +5,9 @@ import dragor.international.api.model.Example
 import dragor.international.api.network.ApiResponses
 import dragor.international.api.network.ApiService
 
-
+/**
+ * Data Layer
+ */
 class Repository (
     private val apiService: ApiService
 ) {

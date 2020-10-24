@@ -3,6 +3,6 @@ import dragor.international.api.model.Example
 
 
 interface ExampleListClickItem {
-    abstract fun onListItemClick(doctorentity: Example?)
+    abstract fun onListItemClick(data: Example?)
 
 }
