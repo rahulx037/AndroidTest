@@ -721,4 +721,11 @@
     <dimen name="sp_99">99.0sp</dimen>
     <dimen name="sp_100">100.0sp</dimen>
 
+
+    <dimen name="eight_dp">8dp</dimen>
+    <dimen name="sixty_dp">60dp</dimen>
+    <dimen name="sixteen_dp">16dp</dimen>
+    <dimen name="twenty_four_dp">24dp</dimen>
+    <dimen name="zero_dp">0dp</dimen>
+
 </resources>

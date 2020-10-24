@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">Medical</string>
+    <string name="app_name">Booking</string>
     <string name="title_home">Discover</string>
-    <string name="title_dashboard">Health</string>
+    <string name="title_dashboard">SuperCoins</string>
     <string name="title_notifications">Notifications</string>
     <string name="app_market_link">link</string>
     <string name="app_google_play_store_link">link</string>
@@ -38,6 +38,33 @@
 
     <string name="vaccination">Vaccination</string>
     <string name="vaccin_subtitle">Keep your kids healthy</string>
+    <string name="title_activity_admin">AdminActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Ticket Kiosk</string>
+    <string name="nav_header_subtitle">Make ticketing easy.</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
 
+    <string name="menu_route">Add Route</string>
+    <string name="menu_stage">Add Stop</string>
+    <string name="menu_report">Reports</string>
+    <string name="menu_map">Map Stops</string>
+    <string name="routeid">Route Id</string>
+    <string name="route_name">Route Name</string>
+
+    <string name="route_id_error">Route Id Required</string>
+    <string name="route_name_error">Route Name Required</string>
+    <string name="dest_name_error">Dest Name Required</string>
+    <string name="source_id_error">Source Id Required</string>
+    <string name="destination_id_error">Destination Id Required</string>
+    <string name="kilometer_error">Kilometer Required</string>
+    <string name="price_error">Fare Required</string>
+    <string name="stop_Id">Stop Id Required</string>
+    <string name="stop_Name">Stop Name Required</string>
+    <string name="stop_Code">Stop Code Required</string>
+
+
+    <string name="avatar_description">avatar_description</string>
 
 </resources>

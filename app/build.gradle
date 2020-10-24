@@ -52,8 +52,8 @@ android {
         jvmTarget = "1.8"
     }
 
-    dataBinding {
-        enabled = true
+    buildFeatures {
+        dataBinding true
     }
 
 }
@@ -72,6 +72,9 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.2.2'
     implementation 'androidx.navigation:navigation-ui-ktx:2.2.2'
     implementation 'androidx.annotation:annotation:1.1.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation files('libs\\poi-3.12-android-a.jar')
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
@@ -92,6 +95,7 @@ dependencies {
 
     implementation deps.fragment.testing
     implementation deps.room.runtime
+    implementation deps.room.ktx
     implementation deps.lifecycle.livedata_ktx
     implementation deps.lifecycle.runtime
     implementation deps.lifecycle.java8
@@ -105,6 +109,8 @@ dependencies {
     implementation deps.timber
     kapt deps.room.compiler
     kapt deps.lifecycle.compiler
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+
 
 
 }

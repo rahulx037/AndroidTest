@@ -18,6 +18,7 @@ package dragor.international.binding
 
 import android.view.View
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.bumptech.glide.Priority
@@ -25,6 +26,8 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
 import dragor.international.R
+import dragor.international.api.model.Medium
+import dragor.international.api.model.User
 
 /**
  * Data Binding adapters specific to the app.
@@ -36,6 +39,7 @@ object BindingAdapters {
         view.visibility = if (show) View.VISIBLE else View.GONE
     }
 
+    @JvmStatic
     @BindingAdapter("url")
     fun loadImageUrl(view: ImageView, url: String?) {
         Glide.with(view.context)
@@ -47,5 +51,88 @@ object BindingAdapters {
             )
             .apply(RequestOptions.bitmapTransform(RoundedCorners(10)))
             .into(view)
+    }
+
+    @JvmStatic
+    @BindingAdapter("avtar")
+    fun loadExampleUrl(view: ImageView, url: List<User>?) {
+        if (url?.get(0)?.avatar != null) {
+            Glide.with(view.context)
+                .load(url?.get(0)?.avatar)
+                .apply(
+                    RequestOptions()
+                        .placeholder(R.drawable.placeholder)
+                        .error(R.drawable.placeholder)
+                        .diskCacheStrategy(DiskCacheStrategy.ALL)
+                        .override(100, 100).priority(Priority.IMMEDIATE)
+                )
+                .apply(RequestOptions().circleCrop())
+                .into(view)
+        }
+    }
+
+    @JvmStatic
+    @BindingAdapter("posts")
+    fun loadPostUrl(view: ImageView, url: List<Medium>?) {
+        if (url?.get(0)?.image != null) {
+            Glide.with(view.context)
+                .load(url?.get(0)?.image)
+                .apply(
+                    RequestOptions().placeholder(R.drawable.placeholder)
+                        .error(R.drawable.placeholder)
+                        .diskCacheStrategy(DiskCacheStrategy.ALL)
+                        .override(300, 300).priority(Priority.IMMEDIATE)
+                )
+                .apply(RequestOptions.bitmapTransform(RoundedCorners(5)))
+                .into(view)
+        }
+    }
+
+    @JvmStatic
+    @BindingAdapter("name")
+    fun setUsers(view: TextView, url: List<User>?) {
+        if (url?.get(0)?.name != null) {
+            view.setText(url?.get(0)?.name.plus(" ").plus(url?.get(0)?.lastname))
+        }
+    }
+
+    @JvmStatic
+    @BindingAdapter("desig")
+    fun setDesignation(view: TextView, url: List<User>?) {
+        if (url?.get(0)?.designation != null) {
+            view.setText(url?.get(0)?.designation)
+        }
+    }
+
+    @JvmStatic
+    @BindingAdapter("title")
+    fun setTitle(view: TextView, url: List<Medium>?) {
+        if (url?.get(0)?.title != null) {
+            view.setText(url?.get(0)?.title)
+        }
+    }
+
+    @JvmStatic
+    @BindingAdapter("link")
+    fun setLinks(view: TextView, url: List<Medium>?) {
+        if (url?.get(0)?.url != null) {
+            view.setText(url?.get(0)?.url)
+        }
+    }
+
+    @JvmStatic
+    @BindingAdapter("likes")
+    fun setLikes(view: TextView, data: String?) {
+        if (data!= null) {
+            view.setText(data.plus(" Likes"))
+        }
+    }
+
+    @JvmStatic
+    @BindingAdapter("comments")
+    fun setComment(view: TextView, data: String?) {
+        if (data!= null) {
+            view.setText(data.plus(" Comments"))
+        }
     }
 }
